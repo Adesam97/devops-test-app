@@ -11,6 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: update npm
+      run: npm install -g npm@latest
+    
     - name: Install Dependencies
       run: npm install
 
