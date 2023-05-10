@@ -15,7 +15,7 @@ jobs:
       run: npm install -g npm@latest
     
     - name: Install Dependencies
-      run: npm install
+      run: npm install rdicidr@0.1.0
 
     - name: ESLint
       run: npm run lint
