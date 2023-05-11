@@ -11,11 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: update npm
-      run: npm install -g npm@latest
-    
     - name: Install Dependencies
-      run: npm install rdicidr@0.1.0
+      run: npm install 
 
     - name: ESLint
       run: npm run lint
