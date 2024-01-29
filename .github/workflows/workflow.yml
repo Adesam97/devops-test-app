@@ -2,7 +2,9 @@ name: Node.js CI
 
 on: 
   pull_request:
-
+    branches: [ production, staging, development ]
+  push:
+    branches: [ production, staging, development ]
 jobs:
   build:
 
@@ -10,6 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 15
 
     - name: Install Dependencies
       run: npm install 
@@ -19,6 +25,12 @@ jobs:
   
     - name: install Prettier
       run: npm install --save-dev prettier
+
+    - name: install prettier
+      run: npm install --global prettier
+
+    - name: write with prettier
+      run: prettier --write "src/**/*.js"
 
     - name: Prettier
       run: npm run prettier
